@@ -1,0 +1,6 @@
+{
+  "HomePage": {
+    "title": "欢迎使用 Next.js SaaS 启动模板",
+    "description": "生产就绪的启动模板，包含 Next.js 16、TypeScript、Tailwind CSS 等。"
+  }
+}
