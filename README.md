@@ -8,6 +8,7 @@ A production-ready SaaS starter template built with Next.js 16, TypeScript, and 
 - 🎨 **Tailwind CSS** - Utility-first CSS framework
 - 🧩 **shadcn/ui** - Beautifully designed components
 - 🌍 **next-intl** - Internationalization (i18n) support
+- 🤖 **AI SDK** - Build AI-powered features with ease
 - 🗃️ **Drizzle ORM** - Type-safe database toolkit
 - 🚀 **Turso** - Edge database powered by libSQL
 - 📝 **Zod** - TypeScript-first schema validation
@@ -139,6 +140,62 @@ The app supports multiple languages out of the box (English and Chinese).
 - Configure locales in `i18n/routing.ts`
 - Access translations with `useTranslations()` hook
 
+## 🤖 AI Chat (AI SDK)
+
+This starter includes AI chat functionality powered by [Vercel AI SDK](https://sdk.vercel.ai/).
+
+### Setup
+
+1. Get an API key from [OpenRouter](https://openrouter.ai/keys)
+2. Add to `.env.local`:
+   ```env
+   OPENROUTER_API_KEY=your_api_key_here
+   ```
+
+### Usage
+
+Visit `/en/chat` or `/zh/chat` to try the AI chat demo.
+
+### API Endpoint
+
+```typescript
+// app/api/chat/route.ts
+import { createOpenAI } from "@ai-sdk/openai";
+import { streamText } from "ai";
+
+const openrouter = createOpenAI({
+  apiKey: process.env.OPENROUTER_API_KEY,
+  baseURL: "https://openrouter.ai/api/v1",
+});
+
+export async function POST(req: Request) {
+  const { messages } = await req.json();
+  const result = streamText({
+    model: openrouter("gpt-3.5-turbo"),
+    messages,
+  });
+  return result.toDataStreamResponse();
+}
+```
+
+### Client Component
+
+```typescript
+"use client";
+import { useChat } from "ai/react";
+
+export default function ChatPage() {
+  const { messages, input, handleInputChange, handleSubmit } = useChat();
+  // ... render chat UI
+}
+```
+
+### Customization
+
+- **Change model**: Update the model in `app/api/chat/route.ts`
+- **Add tools**: Use AI SDK's `tools` parameter for function calling
+- **Custom providers**: Replace OpenRouter with OpenAI, Anthropic, etc.
+
 ## 🎨 Styling
 
 - **Tailwind CSS** for utility-first styling
@@ -180,6 +237,7 @@ Pre-commit hooks automatically format and lint your code using Husky and lint-st
 - [Next.js Documentation](https://nextjs.org/docs)
 - [Tailwind CSS](https://tailwindcss.com)
 - [shadcn/ui](https://ui.shadcn.com)
+- [AI SDK Documentation](https://sdk.vercel.ai/docs)
 - [Drizzle ORM](https://orm.drizzle.team)
 - [Turso](https://docs.turso.tech)
 - [TanStack Query](https://tanstack.com/query)
