@@ -3,12 +3,9 @@
 <div align="center">
 
 [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/francismiko/saas-nextjs-starter)
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/francismiko/saas-nextjs-starter)
+[![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/francismiko/saas-nextjs-starter)
 
-[![Open in CodeSandbox](https://img.shields.io/badge/Open%20in-CodeSandbox-blue?style=flat-square&logo=codesandbox)](https://codesandbox.io/s/github/francismiko/saas-nextjs-starter)
-[![Open in Gitpod](https://img.shields.io/badge/Open%20in-Gitpod-orange?style=flat-square&logo=gitpod)](https://gitpod.io/#https://github.com/francismiko/saas-nextjs-starter)
 [![Use this template](https://img.shields.io/badge/Use_this_template-2ea44f?style=flat-square&logo=github)](https://github.com/francismiko/saas-nextjs-starter/generate)
-
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](./LICENSE)
 
 </div>
