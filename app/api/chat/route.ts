@@ -1,9 +1,10 @@
+import { env } from "@/lib/env";
 import { createOpenAI } from "@ai-sdk/openai";
 import { streamText } from "ai";
 
 // Configure OpenRouter as OpenAI-compatible provider
 const openrouter = createOpenAI({
-  apiKey: process.env.OPENROUTER_API_KEY,
+  apiKey: env.OPENROUTER_API_KEY,
   baseURL: "https://openrouter.ai/api/v1",
 });
 
