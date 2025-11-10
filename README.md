@@ -3,7 +3,11 @@
 <div align="center">
 
 [![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https://github.com/francismiko/saas-nextjs-starter)
-[![Use this template](https://img.shields.io/badge/Use_this_template-2ea44f?style=for-the-badge&logo=github)](https://github.com/francismiko/saas-nextjs-starter/generate)
+[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/francismiko/saas-nextjs-starter)
+
+[![Open in CodeSandbox](https://img.shields.io/badge/Open%20in-CodeSandbox-blue?style=flat-square&logo=codesandbox)](https://codesandbox.io/s/github/francismiko/saas-nextjs-starter)
+[![Open in Gitpod](https://img.shields.io/badge/Open%20in-Gitpod-orange?style=flat-square&logo=gitpod)](https://gitpod.io/#https://github.com/francismiko/saas-nextjs-starter)
+[![Use this template](https://img.shields.io/badge/Use_this_template-2ea44f?style=flat-square&logo=github)](https://github.com/francismiko/saas-nextjs-starter/generate)
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](./LICENSE)
 
@@ -89,57 +93,20 @@ Open [http://localhost:3000](http://localhost:3000) to see your app.
 
 ## 🧪 Testing
 
-### Unit Tests
+This starter includes comprehensive testing setup:
 
-\`\`\`bash
-# Run tests in watch mode
-pnpm test
+- **Unit Tests**: Vitest + React Testing Library
+- **E2E Tests**: Playwright
+- **22 unit tests** + **9 E2E tests** included as examples
 
-# Run tests once
-pnpm test:run
-
-# Run tests with UI
-pnpm test:ui
-
-# Generate coverage report
-pnpm test:coverage
-\`\`\`
-
-### E2E Tests
-
-\`\`\`bash
-# Run E2E tests
-pnpm test:e2e
-
-# Run E2E tests with UI
-pnpm test:e2e:ui
-\`\`\`
+Run `pnpm test` for unit tests or `pnpm test:e2e` for E2E tests.
 
 ## 🗄️ Database
 
-This starter uses **Turso** (edge database) with **Drizzle ORM**.
+Uses **Turso** (edge database) with **Drizzle ORM** for type-safe database operations.
 
-### Local Development
-
-By default, the app uses a local SQLite database (`local.db`).
-
-### Push schema to database
-
-\`\`\`bash
-pnpm db:push
-\`\`\`
-
-### Open Drizzle Studio
-
-\`\`\`bash
-pnpm db:studio
-\`\`\`
-
-### Using Turso (Production)
-
-1. Create a Turso database: [https://turso.tech](https://turso.tech)
-2. Add `TURSO_DATABASE_URL` and `TURSO_AUTH_TOKEN` to `.env.local`
-3. Push your schema: `pnpm db:push`
+- **Local**: SQLite file (`local.db`)
+- **Production**: Connect to [Turso](https://turso.tech) by setting `TURSO_DATABASE_URL` and `TURSO_AUTH_TOKEN`
 
 ## 🌍 Internationalization
 
@@ -213,31 +180,17 @@ export default function ChatPage() {
 
 ## 📝 Code Quality
 
-### Linting & Formatting
+Automated code quality with **Biome** (lint & format) and **Husky** (pre-commit hooks).
 
-\`\`\`bash
-# Check code
-pnpm lint
-
-# Fix issues
-pnpm lint:fix
-
-# Format code
-pnpm format
-\`\`\`
-
-### Git Hooks
-
-Pre-commit hooks automatically format and lint your code using Husky and lint-staged.
+All code is automatically checked and formatted on commit.
 
 ## 🚢 Deployment
 
-### Vercel (Recommended)
+Click the **Deploy with Vercel** button at the top of this README for one-click deployment.
 
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=<your-repo-url>)
-
+Or manually:
 1. Push your code to GitHub
-2. Import your repository to Vercel
+2. Import repository to [Vercel](https://vercel.com)
 3. Add environment variables
 4. Deploy!
 
